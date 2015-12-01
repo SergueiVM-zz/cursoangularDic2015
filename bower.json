@@ -1,0 +1,18 @@
+{
+  "name": "Curso Angular JS",
+  "version": "0.0.1",
+  "authors": [
+    "SergueiVM"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "https://github.com/SergueiVM/cursoangularDic2015",
+  "description": "Ejemplos de codigo del curso",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
