@@ -3,9 +3,12 @@
 <head>
     <title>The Movie DB Clone</title>
     <meta charset="UTF-8">
+<!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+<![endif]-->
 </head>
 <body>
-<form method="POST">
+<form method="POST" novalidate>
     <div>
         <input type="text" name="first_name" placeholder="Nombre" required >
     </div>
@@ -21,6 +24,10 @@
     <div>
         <input type="number" name="number_of_movies" placeholder="Número de Peliculas vistas" min="0" max="100">
     </div>
+    <div>
+        <input type="password" name="password" placeholder="Password">
+    </div>
+
     <button type="submit">Enviar</button>
 </form>
 </body>
