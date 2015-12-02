@@ -1,9 +1,87 @@
-@main-text-color: blue;
-@main-font-family: 'Arial', sans-serif;
+//Variables
+//Fuentes / Tipografias
+@primary-font-family: "Helvetica", "Arial", sans-serif;
 
-body {
-	color: @main-text-color;
-	font-family: @main-font-family;
-	opacity: 0.5;
-    display: flex;
+//Colores
+@primary-color: #59a9ff;
+@menu-link-color: @primary-color;
+@default-border-color: #cccccc;
+
+//Padding and margin
+@padding-default: 25px;
+@margin-default: 25px;
+
+//Helpers
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+//Estilos generales
+body{
+	font-family: @primary-font-family;
+}
+
+//Estilo del menu principal
+.header{
+	&.main{
+		.navigation{
+			&.menu{
+				padding: 10px;
+				border-bottom: 1px solid @default-border-color;
+				a{
+					text-decoration: none;
+					color: @menu-link-color;
+					margin: 0px 5px;
+					&:hover{
+						color: lighten(@menu-link-color, 10%);
+					}
+					&:active{
+						color: darken(@menu-link-color, 10%);
+					}
+
+				}
+			}
+		}
+	}	
+}
+
+//Estilos del listado del peliculas o series
+.media.list{
+	.item{ //Ficha de pelicula o serie
+		.clearfix();
+		border: 2px solid @default-border-color;
+		padding: @padding-default;
+		margin-bottom: @margin-default;
+		.title{
+
+		}
+		.item-meta-info(){
+			float: right;
+			margin: 0px 5px;			
+		}
+		.categories{
+			.item-meta-info();
+		}
+		.date{
+			.item-meta-info();
+		}
+		.rate{
+			.item-meta-info();
+		}
+		.overview{
+			margin-top: @margin-default * 3;
+		}
+		.cover{
+			width: 185px;
+			float: left;
+			margin-right: @margin-default;
+
+		}
+		.video{
+			width: 300px;
+			display: block;
+			clear: both;
+		}
+	}
 }
