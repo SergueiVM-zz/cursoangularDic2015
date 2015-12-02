@@ -19,16 +19,15 @@ module.exports = function(grunt) {
         },
         postcss: {
             options: {
-                  processors: [
-                    require('autoprefixer')() // add vendor prefixes
-                    // require('cssnano')() // minify the result
-                  ]
-                },
+                processors: [
+                    require("autoprefixer")() // add vendor prefixes
+                    //,require('cssnano')() // minify the result
+                ]
+            },
             dist: {
                 src: "css/*.css"
             }
         }
-
     });
 
     // cargar los módulos
@@ -38,6 +37,6 @@ module.exports = function(grunt) {
 
     // registrar la tarea
     grunt.registerTask("default", ["watch"]);
-    grunt.registerTask("compilarless", ["less"]);
+    grunt.registerTask("compilarless", ["less", "postcss"]);
 
 };
