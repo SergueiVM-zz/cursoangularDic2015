@@ -89,10 +89,20 @@ body{
 			display: block;
 			clear: both;
 			margin: 0 auto;
-			transition: transform 2s ease-in-out;
 			&:hover{
-				transform:scale(3) translate(0, -50px);
+				animation: video-animation 1s;
+				transform: translate(0, -170px) scale(3);
 			}
 		}
 	}
+}
+
+@keyframes video-animation {
+	0% { transform: translate(0, 0) scale(1); }
+	25% { transform: translate(0, -170px) scale(1); }
+	80% {transform: translate(0, -170px) scale(3.2);}
+	85% {transform: translate(0, -170px) scale(2.7);}	
+	90% {transform: translate(0, -170px) scale(3.2);}
+	95% {transform: translate(0, -170px) scale(2.7);}
+	100% {transform: translate(0, -170px) scale(3);}
 }
