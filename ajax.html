@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de Ajax</title>
+</head>
+<body>
+    <div id="contador"></div>
+    <button id="incrementar">Incrementar contador</button>
+
+    <script>
+        var clicks = 0;
+        function actualizarClicks(){
+            clicks++;
+            var div = document.getElementById("contador");
+            div.innerHTML = clicks;
+        }
+
+        //Recuperamos el boton
+        var boton = document.getElementById("incrementar");
+        //Cuando se ejecute el elemento click en el boton ejecutar actualizarClicks
+        boton.addEventListener("click", actualizarClicks);
+    </script>    
+
+    <div id="datos"></div>
+    <button id="pedirdatos">Pedir datos al servidor</button>
+    <script>
+        //Ponemos el manejardo del evento al boton con una funcion anonima
+        document.getElementById("pedirdatos").addEventListener("click", function(){
+            var xhr = new XMLHttpRequest();
+            //Abre la conexiion para recuperar data.json
+            xhr.open("GET", "data.json", true); 
+            xhr.onreadystatechange = function(){
+                //Configuro la reaccion cuando responde el servidor
+                document.getElementById("datos").innerHTML = this.responseText;
+                console.log("HA TERMINADO!");
+            }
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
