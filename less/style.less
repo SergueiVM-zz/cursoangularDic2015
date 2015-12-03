@@ -1,6 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
 //Variables
 //Fuentes / Tipografias
-@primary-font-family: "Helvetica", "Arial", sans-serif;
+@primary-font-family:"Roboto Slab", "Helvetica", "Arial", sans-serif;
 
 //Colores
 @primary-color: #59a9ff;
@@ -53,6 +55,10 @@ body{
 		border: 2px solid @default-border-color;
 		padding: @padding-default;
 		margin-bottom: @margin-default;
+		transition: background-color 0.5s;
+		&:hover{
+			background-color: @default-border-color;
+		}
 		.title{
 
 		}
@@ -82,6 +88,11 @@ body{
 			width: 300px;
 			display: block;
 			clear: both;
+			margin: 0 auto;
+			transition: transform 2s ease-in-out;
+			&:hover{
+				transform:scale(3) translate(0, -50px);
+			}
 		}
 	}
 }
