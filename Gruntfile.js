@@ -26,6 +26,7 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     'bower_components/angular/angular.min.js',
+                    'bower_components/angular-route/angular-route.min.js',
                     'scripts/**/*.js', // cualquier archivo .js dentro de alguna subcarpeta de scripts
                     'scripts/app.js'
                 ],
