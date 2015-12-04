@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
-    <title>The Movie DB Clone</title>
-    <meta charset="UTF-8">
-    <!--[if lt IE 9]>
-    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>{{ first_name }}</title>
 </head>
-<body ng-app>
-    <input type="text" ng-model="first_name">
-    <p>Hola, {{first_name}}</p>
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<body>
+
+<input type="text" ng-model="first_name">
+<p>Hola, {{ first_name }}</p>
+
+<script src="dist/built.js"></script>
 </body>
 </html>
