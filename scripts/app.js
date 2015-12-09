@@ -4,6 +4,10 @@ angular.module("MovieDbApp", ["ngRoute"]).config(
             templateUrl: "views/Movies.html"
         }).when("/series", {
             templateUrl: "views/Series.html"
+        }).when("/people", {
+            templateUrl: "views/People.html"
+        }).otherwise({
+            templateUrl: "vie"
         })
     }]
 );
