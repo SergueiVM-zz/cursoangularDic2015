@@ -1,23 +1,24 @@
-angular.module("MovieDbApp").controller("MoviesController", ["$scope", function($scope){
+angular.module("MovieDbApp").controller("MoviesController", 
+    ["$scope", "$http", 
+    function($scope, $http){
     //Inicializacion de Scope
-    $scope.movies = [{
-        poster_url: "https://image.tmdb.org/t/p/w185/nXJt0JZ0UXxwPBcVj2KJ19bUBQ6.jpg",
-        title: "Ant-man",
-        rate: "6.9",
-        year: "2015"
-    },
-    {
-        poster_url: "https://image.tmdb.org/t/p/w185/eDmm19Wz4l3gN6ZtFJTuV3twDNS.jpg",
-        title: "Terminator Génesis",
-        rating: "6.2",
-        year: "2015"
-    },
-    {
-           poster_url: "https://image.tmdb.org/t/p/w185/lIv1QinFqz4dlp5U4lQ6HaiskOZ.jpg",
-           title: "Whiplash",
-           rating: 8.4,
-           year: 2014
-    }];
+    $scope.movies = [];
     $scope.loading = false;
+    $scope.error = null;
+
+    //Recuperamos del servidor el listado de peliculas
+    $scope.loading=true;
+    $scope.error=null;
+    $http.get("/api/movies/").then(function(response){
+        //La peticion ha ido bien
+        console.log("Respuesta", response);
+        $scope.movies = response.data;
+        $scope.loading=false;
+    }, function(){
+        //La peticion ha ido mal
+        
+        $scope.loading=false;
+        $scope.error = "Error al recuperar las peliculas";
+    });
 
 }]);

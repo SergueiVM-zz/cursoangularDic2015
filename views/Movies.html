@@ -1,12 +1,10 @@
 <h1>Movies</h1>
 
-<div class="alert alert-info" role="alert" ng-show="movies.length==0">No hay ninguna pelicula</div>
+<div class="alert alert-info" ng-show="movies.length==0 && !error && !loading">No hay ninguna pelicula</div>
+<div class="alert alert-danger" ng-show="error && !loading">{{error}}</div>
 <div class="text-center" ng-show="loading">
     <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
 </div>
-<button ng-click="loading=true" ng-hide="loading">Cargando SI</button>
-<button ng-click="loading=false" ng-show="loading">Cargando NO</button>
-
 <table class="table table-stripped table-hover" ng-show="movies.length>0">
     <thead>
         <tr>
@@ -21,8 +19,7 @@
             <td><img ng-src="{{movie.poster_url}}" class="movies poster"></td>
             <td>{{movie.title}}</td>
             <td>{{movie.rating}}</td>
-            <td>{{movie.year}}</td>
+            <td>{{movie.date | date: 'yyyy'}}</td>
         </tr>
     </tbody>
 </table>
-<button ng-click="movies=[]" ng-show="movies.length>0">Eliminar</button>
