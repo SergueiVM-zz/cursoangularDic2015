@@ -1,13 +1,13 @@
 <h1>Movies</h1>
 
-<div class="alert alert-info" role="alert" ng-if="movies.length==0">No hay ninguna pelicula</div>
-<div class="text-center" ng-if="loading">
+<div class="alert alert-info" role="alert" ng-show="movies.length==0">No hay ninguna pelicula</div>
+<div class="text-center" ng-show="loading">
     <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
 </div>
-<button ng-click="loading=true">Cargando SI</button>
-<button ng-click="loading=false">Cargando NO</button>
+<button ng-click="loading=true" ng-hide="loading">Cargando SI</button>
+<button ng-click="loading=false" ng-show="loading">Cargando NO</button>
 
-<table class="table table-stripped table-hover" ng-if="movies.length>0">
+<table class="table table-stripped table-hover" ng-show="movies.length>0">
     <thead>
         <tr>
             <th>Poster</th>
@@ -25,4 +25,4 @@
         </tr>
     </tbody>
 </table>
-<button ng-click="movies=[]">Eliminar</button>
+<button ng-click="movies=[]" ng-show="movies.length>0">Eliminar</button>
