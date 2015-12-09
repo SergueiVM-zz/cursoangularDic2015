@@ -3,6 +3,7 @@ angular.module("MovieDbApp").controller("MenuController", ["$scope", function($s
 
     $scope.setActiveItem = function(activeItemId){
         this.activeItem = activeItemId;
+        this.$emit("ChangePageTitle", this.getPageTitle(activeItemId));
     }
 
     $scope.classForItem = function(itemId){
@@ -12,4 +13,15 @@ angular.module("MovieDbApp").controller("MenuController", ["$scope", function($s
         }
         return resultado;
     }
+
+    $scope.getPageTitle = function(activeItemId){
+        switch(activeItemId){
+            case "movies":
+                return "Movies List";
+            case "series":
+                return "Series List";
+            case "people":
+                return "People List";
+        }
+    };
 }]); 
