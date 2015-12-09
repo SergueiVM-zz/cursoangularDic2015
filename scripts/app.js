@@ -7,7 +7,7 @@ angular.module("MovieDbApp", ["ngRoute"]).config(
         }).when("/people", {
             templateUrl: "views/People.html"
         }).otherwise({
-            templateUrl: "vie"
+            templateUrl: "views/404.html"
         })
     }]
 );
