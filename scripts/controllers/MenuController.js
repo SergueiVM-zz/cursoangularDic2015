@@ -1,12 +1,21 @@
-angular.module("MovieDbApp").controller("MenuController", ["$scope", function($scope){
-    $scope.activeItem = "";
+angular.module("MovieDbApp").controller("MenuController", ["$log", "$scope","$location", function($log, $scope, $location){
+    $scope.activeItem = $location.path();
+
+    //escuchamos cuando cambia la url
+    $scope.$on("$locationChangeSuccess", function(){
+        $log.debug("$locationChangeSuccess", arguments, $location.path());
+        $scope.setActiveItem($location.path());
+    });
 
     $scope.setActiveItem = function(activeItemId){
-        this.activeItem = activeItemId;
-        this.$emit("ChangePageTitle", this.getPageTitle(activeItemId));
+        this.activeItem = activeItemId.split("/")[1] || "";
+        if (this.activeItem == ""){
+            $location.url("/movies");
+        }else{
+            this.$emit("ChangePageTitle", this.getPageTitle(this.activeItem ));
+        }
     }
-
-    $scope.classForItem = function(itemId){
+  $scope.classForItem = function(itemId){
         var resultado = "";
         if (this.activeItem == itemId){
             resultado = "active";
