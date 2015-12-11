@@ -5,6 +5,14 @@
 <div class="text-center" ng-show="loading">
     <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
 </div>
+<div class="pull-right">
+<select ng-model="orderby">
+    <option value="rating">Rating</option>
+    <option value="date">Date</option>
+    <option value="title">Title</option>
+</select>
+<label><input type="checkbox" ng-model="reverse">Descendente</label>
+</div>
 <table class="table table-stripped table-hover" ng-show="movies.length>0">
     <thead>
         <tr>
@@ -15,7 +23,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="movie in movies">
+        <tr ng-repeat="movie in movies | orderBy:orderby:reverse">
             <td><img ng-src="{{movie.poster_url}}" class="movies poster"></td>
             <td>{{movie.title}}</td>
             <td>{{movie.rating}}</td>

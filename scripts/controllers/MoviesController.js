@@ -3,6 +3,7 @@ angular.module(APP_NAME).controller("MoviesController",
     function($scope, MovieDbApiClient, $log){
     //Inicializacion de Scope
     $scope.movies = [];
+    $scope.orderby = "rating";
     $scope.loading = false;
     $scope.error = null;
 
