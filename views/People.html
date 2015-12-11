@@ -9,9 +9,11 @@
 <div class="people grid">
     <div class="row">
         <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" ng-repeat="person in people">
-            <div class="person">
+            <div class="thumbnail person">
                 <img class="img-responsive" ng-src="{{person.photo_url}}">
-                <h4>{{person.name}}</h4>
+                <div class="caption">
+                    <h4>{{person.name}}</h4>
+                </div>
             </div>
         </div>
     </div>
