@@ -1,6 +1,11 @@
 var APP_NAME="MovieDbApp";
 angular.module(APP_NAME, ["ngRoute"]).config(
-    ["$routeProvider", function($routeProvider){
+    ["$routeProvider", "MovieDbApiClientConstants", function($routeProvider,MovieDbApiClientConstants){
+
+        //Configura MovieDbApiClient
+        MovieDbApiClientConstants.apiHost = "localhost:8000";
+        
+        //Defino rutas de la apliacion
         $routeProvider.when("/movies", {
             controller: "MoviesController",
             templateUrl: "views/Movies.html"
