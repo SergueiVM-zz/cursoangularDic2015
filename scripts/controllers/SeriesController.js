@@ -1,24 +1,24 @@
-angular.module(APP_NAME).controller("MoviesController", 
+angular.module(APP_NAME).controller("SeriesController", 
     ["$scope", "MovieDbApiClient", "$log",
     function($scope, MovieDbApiClient, $log){
     //Inicializacion de Scope
-    $scope.movies = [];
+    $scope.series = [];
     $scope.loading = false;
     $scope.error = null;
 
     //Recuperamos del servidor el listado de peliculas
     $scope.loading=true;
     $scope.error=null;
-    MovieDbApiClient.getMovies().then(function(response){
+    MovieDbApiClient.getSeries().then(function(response){
         //La peticion ha ido bien
         $log.info("Respuesta", response);
-        $scope.movies = response.data;
+        $scope.series = response.data;
         $scope.loading=false;
-    }, function(){
+    }, function(response){
         //La peticion ha ido mal
-        $log.warn("Error al recuperar las peliculas")
+        $log.warn("Error al recuperar las series", response);
         $scope.loading=false;
-        $scope.error = "Error al recuperar las peliculas";
+        $scope.error = "Error al recuperar las series";
     });
 
 }]);

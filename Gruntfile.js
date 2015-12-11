@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         postcss: {
             options: {
                 processors: [
-                    require("autoprefixer")(), // add vendor prefixes
+                    require("autoprefixer")(), // add vendor prefixes 
                     require('cssnano')() // minify the result
                 ]
             },
@@ -27,8 +27,7 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-route/angular-route.min.js',
-                    'scripts/**/*.js', // cualquier archivo .js dentro de alguna subcarpeta de scripts
-                    'scripts/app.js'
+                    'scripts/**/*.js' // cualquier archivo .js dentro de alguna subcarpeta de scripts
                 ],
                 dest: 'dist/built.js',
             }

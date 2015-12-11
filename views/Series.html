@@ -1,1 +1,25 @@
 <h1>Series</h1>
+
+<div class="alert alert-info" ng-show="series.length==0 && !error && !loading">No hay ninguna pelicula</div>
+<div class="alert alert-danger" ng-show="error && !loading">{{error}}</div>
+<div class="text-center" ng-show="loading">
+    <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
+</div>
+<table class="table table-stripped table-hover" ng-show="series.length>0">
+    <thead>
+        <tr>
+            <th>Poster</th>
+            <th>Título</th>
+            <th>Puntuación</th>
+            <th>Año</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="serie in series">
+            <td><img ng-src="{{serie.poster_url}}" class="series poster"></td>
+            <td>{{serie.title}}</td>
+            <td>{{serie.rating}}</td>
+            <td>{{serie.date | date: 'yyyy'}}</td>
+        </tr>
+    </tbody>
+</table>
