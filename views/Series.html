@@ -5,21 +5,4 @@
 <div class="text-center" ng-show="loading">
     <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
 </div>
-<table class="table table-stripped table-hover" ng-show="series.length>0">
-    <thead>
-        <tr>
-            <th>Poster</th>
-            <th>Título</th>
-            <th>Puntuación</th>
-            <th>Año</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="serie in series">
-            <td><img ng-src="{{serie.poster_url}}" class="series poster"></td>
-            <td>{{serie.title}}</td>
-            <td>{{serie.rating}}</td>
-            <td>{{serie.date | date: 'yyyy'}}</td>
-        </tr>
-    </tbody>
-</table>
+<media-list items="series"></media-list>

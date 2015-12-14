@@ -1,0 +1,19 @@
+<input type="hidden" ng-model="orderby">
+<table class="table table-stripped table-hover">
+    <thead>
+        <tr>
+            <th>Poster</th>
+            <th><span ng-click="orderby = 'title'" class="btn btn-link">Título</span></th>
+            <th><span ng-click="orderby = 'rating'" class="btn btn-link">Puntuación</span></th>
+            <th><span ng-click="orderby = 'date'" class="btn btn-link">Año</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in items | orderBy:orderby:reverse">
+            <td><img ng-src="{{item.poster_url}}" class="movies poster"></td>
+            <td>{{item.title}}</td>
+            <td>{{item.rating}}</td>
+            <td>{{item.date | date: 'yyyy'}}</td>
+        </tr>
+    </tbody>
+</table>

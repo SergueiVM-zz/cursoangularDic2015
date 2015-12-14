@@ -5,21 +5,4 @@
 <div class="text-center" ng-show="loading">
     <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
 </div>
-<table class="table table-stripped table-hover" ng-show="movies.length>0">
-    <thead>
-        <tr>
-            <th>Poster</th>
-            <th><span ng-click="setOrder('title')" class="btn btn-link">Título</span></th>
-            <th><span ng-click="setOrder('rating')" class="btn btn-link">Puntuación</span></th>
-            <th><span ng-click="setOrder('date')" class="btn btn-link">Año</span></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="movie in movies | orderBy:orderby:reverse">
-            <td><img ng-src="{{movie.poster_url}}" class="movies poster"></td>
-            <td>{{movie.title}}</td>
-            <td>{{movie.rating}}</td>
-            <td>{{movie.date | date: 'yyyy'}}</td>
-        </tr>
-    </tbody>
-</table>
+<media-list items="movies"></media-list>
