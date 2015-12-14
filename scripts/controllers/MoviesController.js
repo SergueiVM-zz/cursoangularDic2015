@@ -32,4 +32,9 @@ angular.module(APP_NAME).controller("MoviesController",
         $scope.error = "Error al recuperar las peliculas";
     });
 
+    //Metodos
+    $scope.movieSelected = function(movie){
+        $log.debug("movieSelected", movie);
+    };
+
 }]);
