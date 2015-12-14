@@ -15,3 +15,99 @@
     }
 }
 .row div[class="col-"]{transition: width 0.25}
+
+//spritesheet
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+.sprite {
+    background-image: url(../images/spritesheet.png);    background-repeat: no-repeat;
+    display: inline-block;
+
+    &.sprite-action {
+        .stitches-sprite(-5px, -5px, 32px, 32px);
+    }
+
+    &.sprite-date {
+        .stitches-sprite(-5px, -47px, 32px, 32px);
+    }
+
+    &.sprite-drama {
+        .stitches-sprite(-5px, -89px, 32px, 32px);
+    }
+
+    &.sprite-ear {
+        .stitches-sprite(-5px, -131px, 32px, 32px);
+    }
+
+    &.sprite-facebook {
+        .stitches-sprite(-5px, -173px, 32px, 32px);
+    }
+
+    &.sprite-film {
+        .stitches-sprite(-5px, -215px, 32px, 32px);
+    }
+
+    &.sprite-googleplus {
+        .stitches-sprite(-5px, -257px, 32px, 32px);
+    }
+
+    &.sprite-humor {
+        .stitches-sprite(-5px, -299px, 32px, 32px);
+    }
+
+    &.sprite-linkedin {
+        .stitches-sprite(-5px, -341px, 32px, 32px);
+    }
+
+    &.sprite-love {
+        .stitches-sprite(-5px, -383px, 32px, 32px);
+    }
+
+    &.sprite-music {
+        .stitches-sprite(-5px, -425px, 32px, 32px);
+    }
+
+    &.sprite-police {
+        .stitches-sprite(-5px, -467px, 32px, 32px);
+    }
+
+    &.sprite-sci-fi {
+        .stitches-sprite(-5px, -509px, 32px, 32px);
+    }
+
+    &.sprite-space {
+        .stitches-sprite(-5px, -551px, 32px, 32px);
+    }
+
+    &.sprite-sports {
+        .stitches-sprite(-5px, -593px, 32px, 32px);
+    }
+
+    &.sprite-star {
+        .stitches-sprite(-5px, -635px, 32px, 32px);
+    }
+
+    &.sprite-terror {
+        .stitches-sprite(-5px, -677px, 32px, 32px);
+    }
+
+    &.sprite-tv {
+        .stitches-sprite(-5px, -719px, 32px, 32px);
+    }
+
+    &.sprite-twitter {
+        .stitches-sprite(-5px, -761px, 32px, 32px);
+    }
+
+    &.sprite-war {
+        .stitches-sprite(-5px, -803px, 32px, 32px);
+    }
+
+    &.sprite-zombies {
+        .stitches-sprite(-5px, -845px, 32px, 32px);
+    }
+}
