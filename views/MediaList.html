@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in items | orderBy:orderby:reverse" ng-click="itemSelected({item: item})">
+        <tr ng-repeat="item in items | orderBy:orderby:reverse" ng-click="itemSelected({item: item, indice: $index})">
             <td><img ng-src="{{item.poster_url}}" class="poster"></td>
             <td>{{item.title}}</td>
             <td>{{item.rating}}</td>

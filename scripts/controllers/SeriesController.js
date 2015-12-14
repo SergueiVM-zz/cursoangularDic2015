@@ -1,6 +1,6 @@
 angular.module(APP_NAME).controller("SeriesController", 
-    ["$scope", "MovieDbApiClient", "$log",
-    function($scope, MovieDbApiClient, $log){
+    ["$scope", "MovieDbApiClient", "$log", "$location",
+    function($scope, MovieDbApiClient, $log, $location){
     //Inicializacion de Scope
     $scope.series = [];
     $scope.loading = false;
@@ -20,5 +20,8 @@ angular.module(APP_NAME).controller("SeriesController",
         $scope.loading=false;
         $scope.error = "Error al recuperar las series";
     });
-
+    //Metodos
+    $scope.serieSelected = function(serie, indice){
+        $location.url("/series/"+ serie.id);
+    };
 }]);

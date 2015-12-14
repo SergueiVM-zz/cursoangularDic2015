@@ -15,7 +15,7 @@ angular.module("MovieDbApp").controller("MenuController", ["$log", "$scope","$lo
             this.$emit("ChangePageTitle", this.getPageTitle(this.activeItem ));
         }
     }
-  $scope.classForItem = function(itemId){
+    $scope.classForItem = function(itemId){
         var resultado = "";
         if (this.activeItem == itemId){
             resultado = "active";

@@ -33,4 +33,16 @@ angular.module(APP_NAME).service("MovieDbApiClient",
         $log.debug("Obteniendo people");
         return $http.get(this.getUrl("people/"));
     };
+
+    this.getMovie = function(id){
+      return $http.get(this.getUrl("movies/")+id);  
+    }
+
+    this.getSerie = function(id){
+      return $http.get(this.getUrl("series/")+id);  
+    }
+
+    this.getPerson = function(id){
+      return $http.get(this.getUrl("people/")+id);  
+    }    
 }]);

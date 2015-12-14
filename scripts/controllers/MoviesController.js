@@ -1,6 +1,6 @@
 angular.module(APP_NAME).controller("MoviesController", 
-    ["$scope", "MovieDbApiClient", "$log",
-    function($scope, MovieDbApiClient, $log){
+    ["$scope", "MovieDbApiClient", "$log", "$location",
+    function($scope, MovieDbApiClient, $log, $location){
     //Inicializacion de Scope
     $scope.movies = [];
     $scope.loading = false;
@@ -33,8 +33,8 @@ angular.module(APP_NAME).controller("MoviesController",
     });
 
     //Metodos
-    $scope.movieSelected = function(movie){
-        $log.debug("movieSelected", movie);
+    $scope.movieSelected = function(movie, indice){
+        $location.url("/movies/"+ movie.id);
     };
 
 }]);
