@@ -10,7 +10,7 @@
     </thead>
     <tbody>
         <tr ng-repeat="item in items | orderBy:orderby:reverse">
-            <td><img ng-src="{{item.poster_url}}" class="movies poster"></td>
+            <td><img ng-src="{{item.poster_url}}" class="poster"></td>
             <td>{{item.title}}</td>
             <td>{{item.rating}}</td>
             <td>{{item.date | date: 'yyyy'}}</td>
