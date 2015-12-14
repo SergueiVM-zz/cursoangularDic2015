@@ -16,7 +16,15 @@
         <ul class="list-group">
           <li class="list-group-item">
                 <strong>Categories:</strong>
-                <span ng-repeat="category in item.categories">{{category}}{{$last ? '' : ', '}}</span>
+                <span ng-repeat="category in item.categories">
+                  <img src="images/space.png" ng-if="category=='Adventure'" alt="{{category}}" title="{{category}}">
+                  <img src="images/action.png" ng-if="category=='Action'" alt="{{category}}" title="{{category}}">
+                  <img src="images/action.png" ng-if="category=='Western'" alt="{{category}}" title="{{category}}">
+                  <img src="images/sci-fi.png" ng-if="category=='Science Fiction'" alt="{{category}}" title="{{category}}">
+                  <img src="images/drama.png" ng-if="category=='Drama'" alt="{{category}}" title="{{category}}">
+                  <img src="images/police.png" ng-if="category=='Thriller'" alt="{{category}}" title="{{category}}">
+                  <img src="images/humor.png" ng-if="category=='Comedy'" alt="{{category}}" title="{{category}}">
+                </span>
           </li>
           <li class="list-group-item">
               <strong>Rating:</strong> {{item.rating}}
