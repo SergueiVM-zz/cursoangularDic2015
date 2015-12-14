@@ -5,21 +5,13 @@
 <div class="text-center" ng-show="loading">
     <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
 </div>
-<div class="pull-right">
-<select ng-model="orderby">
-    <option value="rating">Rating</option>
-    <option value="date">Date</option>
-    <option value="title">Title</option>
-</select>
-<label><input type="checkbox" ng-model="reverse">Descendente</label>
-</div>
 <table class="table table-stripped table-hover" ng-show="movies.length>0">
     <thead>
         <tr>
             <th>Poster</th>
-            <th>Título</th>
-            <th>Puntuación</th>
-            <th>Año</th>
+            <th><span ng-click="setOrder('title')" class="btn btn-link">Título</span></th>
+            <th><span ng-click="setOrder('rating')" class="btn btn-link">Puntuación</span></th>
+            <th><span ng-click="setOrder('date')" class="btn btn-link">Año</span></th>
         </tr>
     </thead>
     <tbody>
