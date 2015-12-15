@@ -111,3 +111,18 @@
         .stitches-sprite(-5px, -845px, 32px, 32px);
     }
 }
+
+//Form styles
+.errors{
+    color: @brand-danger
+}
+
+
+form{
+    .ng-dirty.ng-invalid{
+        border-color: @brand-danger;
+    }
+    .ng-dirty.ng-valid{
+        border-color: @brand-success;
+    }
+}

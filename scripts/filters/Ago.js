@@ -1,6 +1,8 @@
 angular.module(APP_NAME).filter("ago", function(){
     return function(value) {
-        if (value != null){
+        if (typeof(value) === "undefined"){
+            return "";
+        }
         var dateParts = value.split("-");  // value -> YYYY-MM-DD
         var year = parseInt(dateParts[0]);
         var month = parseInt(dateParts[1]);
@@ -26,8 +28,5 @@ angular.module(APP_NAME).filter("ago", function(){
 
         var years = Math.round(Math.abs(today.getYear() - origin.getYear()));
         return years + " years";
-    }else{
-        return "";
-    }
     };
 });

@@ -12,6 +12,7 @@ angular.module(APP_NAME).controller("MovieDetailController",
         MovieDbApiClient.getMovie($routeParams.id).then(function(response){
             $scope.item = response.data;
             $log.debug("ITEM", $scope.item );
+            $scope.$emit("ChangePageTitle", $scope.item.title );
             $scope.loading = false;
         }, function(response){
             $scope.error = "Error al recuperar pelicula";

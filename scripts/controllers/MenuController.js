@@ -1,4 +1,4 @@
-angular.module("MovieDbApp").controller("MenuController", ["$log", "$scope","$location", function($log, $scope, $location){
+angular.module(APP_NAME).controller("MenuController", ["$log", "$scope","$location", function($log, $scope, $location){
     $scope.activeItem = $location.path();
 
     //escuchamos cuando cambia la url

@@ -35,14 +35,32 @@ angular.module(APP_NAME).service("MovieDbApiClient",
     };
 
     this.getMovie = function(id){
-      return $http.get(this.getUrl("movies/")+id);  
-    }
+      return $http.get(this.getUrl("movies/"+id));  
+    };
 
     this.getSerie = function(id){
-      return $http.get(this.getUrl("series/")+id);  
-    }
+      return $http.get(this.getUrl("series/"+id));  
+    };
 
     this.getPerson = function(id){
-      return $http.get(this.getUrl("people/")+id);  
-    }    
+      return $http.get(this.getUrl("people/"+id));  
+    };   
+
+    this.saveSerie = function(serie){
+        $log.debug("saveSerie");
+        if (typeof(serie.id) == "undefined"){
+            return $http.post(this.getUrl("series/"), serie);
+        }else{
+            return $http.put(this.getUrl("series/"+serie.id), serie);
+        }
+    };
+
+    this.saveMovie = function(movie){
+        $log.debug("saveMovie");
+        if (typeof(movie.id) == "undefined"){
+            return $http.post(this.getUrl("movies/"), movie);
+        }else{
+            return $http.put(this.getUrl("movies/"+movie.id), movie);
+        }
+    };    
 }]);
